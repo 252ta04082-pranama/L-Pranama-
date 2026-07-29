@@ -1,6 +1,19 @@
-#include<stdio.h>
-int main() 
+include<stdio.h>
+int main()
 {
-printf("Hello World");
-return 0 ;
+int n,reversed integer=0, remainder, original integer;
+printf("Enter an integer");
+scanf("%d",&n);
+original integer=n;
+while (n=0)
+{
+remainder=n%10;
+reversed integer=reversed integer*10+remainder;
+n/=10;
+}
+if(original integer== reversed integer)
+printf("%d is a palindrome", original integer);
+else
+printf ("%d is not a palindrome", original integer);
+return 0;
 }
