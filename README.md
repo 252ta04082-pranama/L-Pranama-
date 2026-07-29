@@ -1,15 +1,12 @@
 include<stdio.h>
 int main()
 {
-int n, reverse=0;
-printf("Enter a number to reverse \n");
+int n,i;
+printf("enter an integer:");
 scanf("%d",&n);
-while (n!=0)
+for(i=1;i<=10;i++)
 {
-reverse=reverse*10;
-reverse=reverse+n%10;
-n=n%10;
+printf ("%d*%d=%d\n",n,i,n*i);
 }
-printf ("reverse of entered number is=%d\n", reverse);
 return 0;
 }
