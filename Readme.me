@@ -1,20 +1,16 @@
 #include <stdio.h>
 int main()
 {
-    char str[100];
-    int i, count = 0;
-    printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
-    for(i = 0; str[i] != '\0'; i++)
-    {
-        if(str[i]=='a' || str[i]=='e' || str[i]=='i' ||
-           str[i]=='o' || str[i]=='u' ||
-           str[i]=='A' || str[i]=='E' || str[i]=='I' ||
-           str[i]=='O' || str[i]=='U')
-        {
-            count++;
-        }
-    }
-    printf("Number of vowels = %d", count);
+    int units;
+    float bill;
+    printf("Enter units consumed: ");
+    scanf("%d", &units);
+    if(units <= 100)
+        bill = units * 1.5;
+    else if(units <= 200)
+        bill = 100 * 1.5 + (units - 100) * 2.5;
+    else
+        bill = 100 * 1.5 + 100 * 2.5 + (units - 200) * 4;
+    printf("Electricity bill = Rs. %.2f", bill);
     return 0;
 }
