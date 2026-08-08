@@ -1,31 +1,19 @@
 #include <stdio.h>
 int main()
 {
-    int a, b, choice;
-    printf("Enter two numbers: ");
-    scanf("%d %d", &a, &b);
-    printf("\n1. Addition");
-    printf("\n2. Subtraction");
-    printf("\n3. Multiplication");
-    printf("\n4. Division");
-    printf("\nEnter your choice: ");
-    scanf("%d", &choice);
-    switch(choice)
+    int day;
+    printf("Enter day number (1-7): ");
+    scanf("%d", &day);
+    switch(day)
     {
-        case 1:
-            printf("Result = %d", a + b);
-            break;
-        case 2:
-            printf("Result = %d", a - b);
-            break;
-        case 3:
-            printf("Result = %d", a * b);
-            break;
-        case 4:
-            printf("Result = %d", a / b);
-            break;
-        default:
-            printf("Invalid choice");
+        case 1: printf("Monday"); break;
+        case 2: printf("Tuesday"); break;
+        case 3: printf("Wednesday"); break;
+        case 4: printf("Thursday"); break;
+        case 5: printf("Friday"); break;
+        case 6: printf("Saturday"); break;
+        case 7: printf("Sunday"); break;
+        default: printf("Invalid day");
     }
     return 0;
 }
