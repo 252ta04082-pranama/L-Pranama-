@@ -1,26 +1,31 @@
 #include <stdio.h>
 int main()
 {
-    int a[10], n, i, largest, second;
-    printf("Enter number of elements: ");
-    scanf("%d", &n);
-    printf("Enter elements:\n");
-    for(i = 0; i < n; i++)
-        scanf("%d", &a[i]);
-    largest = second = a[0];
-    for(i = 1; i < n; i++)
+    int a, b, choice;
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    printf("\n1. Addition");
+    printf("\n2. Subtraction");
+    printf("\n3. Multiplication");
+    printf("\n4. Division");
+    printf("\nEnter your choice: ");
+    scanf("%d", &choice);
+    switch(choice)
     {
-        if(a[i] > largest)
-        {
-            second = largest;
-            largest = a[i];
-        }
-        else if(a[i] > second && a[i] != largest)
-        {
-            second = a[i];
-        }
+        case 1:
+            printf("Result = %d", a + b);
+            break;
+        case 2:
+            printf("Result = %d", a - b);
+            break;
+        case 3:
+            printf("Result = %d", a * b);
+            break;
+        case 4:
+            printf("Result = %d", a / b);
+            break;
+        default:
+            printf("Invalid choice");
     }
-
-    printf("Second largest = %d", second);
     return 0;
 }
