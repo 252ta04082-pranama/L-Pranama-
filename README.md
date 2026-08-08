@@ -1,19 +1,26 @@
 #include <stdio.h>
 int main()
 {
-    int n, temp, rem, sum = 0;
-    printf("Enter a number: ");
+    int a[10], n, i, largest, second;
+    printf("Enter number of elements: ");
     scanf("%d", &n);
-    temp = n;
-    while(n > 0)
+    printf("Enter elements:\n");
+    for(i = 0; i < n; i++)
+        scanf("%d", &a[i]);
+    largest = second = a[0];
+    for(i = 1; i < n; i++)
     {
-        rem = n % 10;
-        sum = sum + rem * rem * rem;
-        n = n / 10;
+        if(a[i] > largest)
+        {
+            second = largest;
+            largest = a[i];
+        }
+        else if(a[i] > second && a[i] != largest)
+        {
+            second = a[i];
+        }
     }
-    if(sum == temp)
-        printf("Armstrong number");
-    else
-        printf("Not an Armstrong number");
+
+    printf("Second largest = %d", second);
     return 0;
 }
