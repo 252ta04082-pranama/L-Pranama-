@@ -2,32 +2,23 @@
 
 int main()
 {
-    int a[100];
-    int n, i;
+    int n, square, sum = 0;
 
-    printf("Enter the number of elements: ");
+    printf("Enter a number: ");
     scanf("%d", &n);
 
-    printf("Enter %d elements:\n", n);
+    square = n * n;
 
-    for(i = 0; i < n; i++)
+    while(square > 0)
     {
-        scanf("%d", &a[i]);
+        sum = sum + square % 10;
+        square = square / 10;
     }
 
-    printf("\nOriginal array:\n");
-
-    for(i = 0; i < n; i++)
-    {
-        printf("%d ", a[i]);
-    }
-
-    printf("\n\nReversed array:\n");
-
-    for(i = n - 1; i >= 0; i--)
-    {
-        printf("%d ", a[i]);
-    }
+    if(sum == n)
+        printf("Neon number");
+    else
+        printf("Not a neon number");
 
     return 0;
 }
