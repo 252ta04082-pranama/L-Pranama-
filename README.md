@@ -1,19 +1,20 @@
 #include <stdio.h>
 int main()
 {
-    int day;
-    printf("Enter day number (1-7): ");
-    scanf("%d", &day);
-    switch(day)
+    char str[100];
+    int i, count = 0;
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+    for(i = 0; str[i] != '\0'; i++)
     {
-        case 1: printf("Monday"); break;
-        case 2: printf("Tuesday"); break;
-        case 3: printf("Wednesday"); break;
-        case 4: printf("Thursday"); break;
-        case 5: printf("Friday"); break;
-        case 6: printf("Saturday"); break;
-        case 7: printf("Sunday"); break;
-        default: printf("Invalid day");
+        if(str[i]=='a' || str[i]=='e' || str[i]=='i' ||
+           str[i]=='o' || str[i]=='u' ||
+           str[i]=='A' || str[i]=='E' || str[i]=='I' ||
+           str[i]=='O' || str[i]=='U')
+        {
+            count++;
+        }
     }
+    printf("Number of vowels = %d", count);
     return 0;
 }
