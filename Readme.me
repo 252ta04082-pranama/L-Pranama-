@@ -1,24 +1,25 @@
 #include <stdio.h>
 
+int reverse(int n, int rev)
+{
+    if(n == 0)
+        return rev;
+
+    rev = rev * 10 + n % 10;
+
+    return reverse(n / 10, rev);
+}
+
 int main()
 {
-    int n, square, sum = 0;
+    int n, result;
 
     printf("Enter a number: ");
     scanf("%d", &n);
 
-    square = n * n;
+    result = reverse(n, 0);
 
-    while(square > 0)
-    {
-        sum = sum + square % 10;
-        square = square / 10;
-    }
-
-    if(sum == n)
-        printf("Neon number");
-    else
-        printf("Not a neon number");
+    printf("Reverse of the number = %d", result);
 
     return 0;
 }
