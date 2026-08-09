@@ -1,23 +1,68 @@
 #include <stdio.h>
 int main()
 {
-    int rows, i, j, space;
-    int value;
-    printf("Enter number of rows: ");
-    scanf("%d", &rows);
-    for(i = 0; i < rows; i++)
+    int choice;
+    float V, I, R;
+
+    printf("===== OHM'S LAW CALCULATOR =====\n");
+    printf("1. Calculate Voltage\n");
+    printf("2. Calculate Current\n");
+    printf("3. Calculate Resistance\n");
+
+    printf("\nEnter your choice: ");
+    scanf("%d", &choice);
+
+    switch(choice)
     {
-        for(space = 0; space < rows - i - 1; space++)
-        {
-            printf(" ");
-        }
-        value = 1;
-        for(j = 0; j <= i; j++)
-        {
-            printf("%d ", value);
-            value = value * (i - j) / (j + 1);
-        }
-        printf("\n");
+        case 1:
+            printf("Enter Current (I) in Amperes: ");
+            scanf("%f", &I);
+
+            printf("Enter Resistance (R) in Ohms: ");
+            scanf("%f", &R);
+
+            V = I * R;
+
+            printf("Voltage = %.2f Volts", V);
+            break;
+
+        case 2:
+            printf("Enter Voltage (V) in Volts: ");
+            scanf("%f", &V);
+
+            printf("Enter Resistance (R) in Ohms: ");
+            scanf("%f", &R);
+
+            if(R != 0)
+            {
+                I = V / R;
+                printf("Current = %.2f Amperes", I);
+            }
+            else
+            {
+                printf("Resistance cannot be zero.");
+            }
+            break;
+
+        case 3:
+            printf("Enter Voltage (V) in Volts: ");
+            scanf("%f", &V);
+
+            printf("Enter Current (I) in Amperes: ");
+            scanf("%f", &I);
+
+            if(I != 0)
+            {
+                R = V / I;
+                printf("Resistance = %.2f Ohms", R);
+            }
+            else
+            {
+                printf("Current cannot be zero.");
+            }
+            break;
+        default:
+            printf("Invalid choice!");
     }
-return 0;
+    return 0;
 }
