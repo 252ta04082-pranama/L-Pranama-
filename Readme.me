@@ -2,17 +2,23 @@
 
 int main()
 {
-    int a, b, sum;
+    int n, i, count = 0;
 
-    printf("Enter first number: ");
-    scanf("%d", &a);
+    printf("Enter a number: ");
+    scanf("%d", &n);
 
-    printf("Enter second number: ");
-    scanf("%d", &b);
+    for(i = 1; i <= n; i++)
+    {
+        if(n % i == 0)
+        {
+            count++;
+        }
+    }
 
-    sum = a + b;
-
-    printf("Sum of two numbers = %d", sum);
+    if(count == 2)
+        printf("%d is a Prime Number", n);
+    else
+        printf("%d is Not a Prime Number", n);
 
     return 0;
 }
