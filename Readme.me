@@ -2,14 +2,14 @@
 
 int main()
 {
-    float base, height, area;
+    float p, r, t, si;
 
-    printf("Enter base and height: ");
-    scanf("%f %f", &base, &height);
+    printf("Enter principal, rate and time: ");
+    scanf("%f %f %f", &p, &r, &t);
 
-    area = 0.5 * base * height;
+    si = (p * r * t) / 100;
 
-    printf("Area of triangle = %.2f", area);
+    printf("Simple Interest = %.2f", si);
 
     return 0;
 }
