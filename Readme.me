@@ -2,17 +2,16 @@
 
 int main()
 {
-    int n;
+    float a, b, c, total, average;
 
-    printf("Enter a number: ");
-    scanf("%d", &n);
+    printf("Enter three numbers: ");
+    scanf("%f %f %f", &a, &b, &c);
 
-    if (n > 0)
-        printf("Positive");
-    else if (n < 0)
-        printf("Negative");
-    else
-        printf("Zero");
+    total = a + b + c;
+    average = total / 3;
+
+    printf("Total = %.2f\n", total);
+    printf("Average = %.2f", average);
 
     return 0;
 }
