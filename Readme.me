@@ -1,70 +1,10 @@
 #include <stdio.h>
 int main()
 {
-    int choice, result;
-    printf("====================================\n");
-    printf("     FOOD ADULTERATION CHECKER\n");
-printf("====================================\n");
-    printf("\n1. Milk");
-    printf("\n2. Honey");
-    printf("\n3. Turmeric Powder");
-    printf("\n4. Chilli Powder");
-    printf("\n5. Cooking Oil");
-    printf("\n\nEnter your choice: ");
-    scanf("%d", &choice);
-    switch(choice)
-    {
-        case 1:
-            printf("\nMILK ADULTERATION TEST");
-            printf("\nDid the milk show a positive test for adulteration? (1-Yes / 0-No): ");
-            scanf("%d", &result);
-            if(result == 1)
-                printf("\nResult: Milk may be adulterated.");
-            else
-                printf("\nResult: No adulteration detected by this test.");
-            break;
-        case 2:
-            printf("\nHONEY ADULTERATION TEST");
-            printf("\nDid the sample show a positive test for adulteration? (1-Yes / 0-No): ");
-            scanf("%d", &result);
-            if(result == 1)
-                printf("\nResult: Honey may be adulterated.");
-            else
-                printf("\nResult: No adulteration detected by this test.");
-            break;
-        case 3:
-            printf("\nTURMERIC POWDER TEST");
-            printf("\nDid the sample show a positive test for adulteration? (1-Yes / 0-No): ");
-            scanf("%d", &result);
-            if(result == 1)
-                printf("\nResult: Turmeric powder may be adulterated.");
-            else
-                printf("\nResult: No adulteration detected by this test.");
-            break;
-        case 4:
-            printf("\nCHILLI POWDER TEST");
-            printf("\nDid the sample show a positive test for adulteration? (1-Yes / 0-No): ");
-            scanf("%d", &result);
-            if(result == 1)
-                printf("\nResult: Chilli powder may be adulterated.");
-            else
-                printf("\nResult: No adulteration detected by this test.");
-            break;
-        case 5:
-            printf("\nCOOKING OIL TEST");
-            printf("\nDid the sample show a positive test for adulteration? (1-Yes / 0-No): ");
-            scanf("%d", &result);
-            if(result == 1)
-                printf("\nResult: Cooking oil may be adulterated.");
-            else
-                printf("\nResult: No adulteration detected by this test.");
-            break;
-        default:
-            printf("\nInvalid choice!");
-    }
-printf("\n\n====================================");
-    printf("\nPlease note: This program does not chemically test food.");
-    printf("\nIt only records the result of an actual test.");
-    printf("\n====================================\n");
+    float radius, area;
+    printf("Enter radius: ");
+    scanf("%f", &radius);
+    area = 3.14159 * radius * radius;
+    printf("Area of circle = %.2f", area);
     return 0;
 }
