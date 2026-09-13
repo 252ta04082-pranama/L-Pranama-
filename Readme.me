@@ -1,66 +1,46 @@
 print("===================================")
-print("          🎯 PYTHON QUIZ")
+print("          💰 EXPENSE TRACKER")
 print("===================================")
 
-questions = [
-    {
-        "question": "1. Which language are we using?",
-        "options": ["A. Java", "B. Python", "C. C++", "D. HTML"],
-        "answer": "B"
-    },
-    {
-        "question": "2. Which symbol is used for comments in Python?",
-        "options": ["A. //", "B. /*", "C. #", "D. <!--"],
-        "answer": "C"
-    },
-    {
-        "question": "3. Which function is used to display output?",
-        "options": ["A. display()", "B. print()", "C. show()", "D. output()"],
-        "answer": "B"
-    },
-    {
-        "question": "4. Which data type stores True or False?",
-        "options": ["A. String", "B. Integer", "C. Boolean", "D. Float"],
-        "answer": "C"
-    },
-    {
-        "question": "5. Which keyword is used to create a function?",
-        "options": ["A. function", "B. define", "C. fun", "D. def"],
-        "answer": "D"
-    }
-]
+expenses = []
 
-score = 0
+while True:
+    print("\n1. Add Expense")
+    print("2. View Expenses")
+    print("3. Show Total")
+    print("4. Exit")
 
-for q in questions:
-    print("\n" + q["question"])
+    choice = input("\nEnter your choice: ")
 
-    for option in q["options"]:
-        print(option)
+    if choice == "1":
+        item = input("Enter expense name: ")
+        amount = float(input("Enter amount: ₹"))
 
-    answer = input("Enter your answer (A/B/C/D): ").upper()
+        expenses.append([item, amount])
 
-    if answer == q["answer"]:
-        print("✅ Correct!")
-        score += 1
+        print("✅ Expense added successfully!")
+
+    elif choice == "2":
+        if len(expenses) == 0:
+            print("📭 No expenses recorded.")
+
+        else:
+            print("\n------ YOUR EXPENSES ------")
+
+            for i, expense in enumerate(expenses, start=1):
+                print(f"{i}. {expense[0]} - ₹{expense[1]:.2f}")
+
+    elif choice == "3":
+        total = 0
+
+        for expense in expenses:
+            total += expense[1]
+
+        print(f"\n💵 Total Expenses: ₹{total:.2f}")
+
+    elif choice == "4":
+        print("\nThank you for using Expense Tracker! 😊")
+        break
+
     else:
-        print("❌ Wrong!")
-        print("Correct answer:", q["answer"])
-
-print("\n===================================")
-print("              RESULT")
-print("===================================")
-
-print("Your Score:", score, "/", len(questions))
-
-percentage = (score / len(questions)) * 100
-print("Percentage:", percentage, "%")
-
-if percentage == 100:
-    print("🏆 Excellent!")
-elif percentage >= 60:
-    print("👏 Good job!")
-else:
-    print("📚 Keep practicing!")
-
-print("===================================")
+        print("❌ Invalid choice. Please try again.")
