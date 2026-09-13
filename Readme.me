@@ -1,64 +1,44 @@
-import math
+print("====================================")
+print("       🎓 STUDENT GRADE CALCULATOR")
+print("====================================")
 
-def calculator():
-    print("================================")
-    print("       🧮 SMART CALCULATOR")
-    print("================================")
+name = input("Enter student name: ")
 
-    while True:
-        print("\nChoose an operation:")
-        print("1. Addition (+)")
-        print("2. Subtraction (-)")
-        print("3. Multiplication (*)")
-        print("4. Division (/)")
-        print("5. Power (^)")
-        print("6. Square Root (√)")
-        print("7. Exit")
+print("\nEnter marks out of 100:")
 
-        choice = input("\nEnter your choice: ")
+maths = float(input("Maths: "))
+physics = float(input("Physics: "))
+chemistry = float(input("Chemistry: "))
+english = float(input("English: "))
+computer = float(input("Computer Science: "))
 
-        if choice == "7":
-            print("\nThank you for using Smart Calculator! 😊")
-            break
+total = maths + physics + chemistry + english + computer
+percentage = total / 5
 
-        if choice == "6":
-            number = float(input("Enter a number: "))
+if percentage >= 90:
+    grade = "A+"
+elif percentage >= 80:
+    grade = "A"
+elif percentage >= 70:
+    grade = "B"
+elif percentage >= 60:
+    grade = "C"
+elif percentage >= 50:
+    grade = "D"
+else:
+    grade = "F"
 
-            if number < 0:
-                print("❌ Square root of a negative number is not possible.")
-            else:
-                result = math.sqrt(number)
-                print("Result =", result)
+print("\n====================================")
+print("             RESULT")
+print("====================================")
+print("Student Name :", name)
+print("Total Marks  :", total, "/ 500")
+print("Percentage   :", percentage, "%")
+print("Grade        :", grade)
 
-        elif choice in ["1", "2", "3", "4", "5"]:
-            num1 = float(input("Enter first number: "))
-            num2 = float(input("Enter second number: "))
+if percentage >= 50:
+    print("Status       : PASS ✅")
+else:
+    print("Status       : FAIL ❌")
 
-            if choice == "1":
-                result = num1 + num2
-                print("Result =", result)
-
-            elif choice == "2":
-                result = num1 - num2
-                print("Result =", result)
-
-            elif choice == "3":
-                result = num1 * num2
-                print("Result =", result)
-
-            elif choice == "4":
-                if num2 == 0:
-                    print("❌ Cannot divide by zero.")
-                else:
-                    result = num1 / num2
-                    print("Result =", result)
-
-            elif choice == "5":
-                result = num1 ** num2
-                print("Result =", result)
-
-        else:
-            print("❌ Invalid choice. Please try again.")
-
-
-calculator()
+print("====================================")
