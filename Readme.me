@@ -1,27 +1,66 @@
-import random
-import string
+print("===================================")
+print("          🎯 PYTHON QUIZ")
+print("===================================")
 
-print("====================================")
-print("       🔐 PASSWORD GENERATOR")
-print("====================================")
+questions = [
+    {
+        "question": "1. Which language are we using?",
+        "options": ["A. Java", "B. Python", "C. C++", "D. HTML"],
+        "answer": "B"
+    },
+    {
+        "question": "2. Which symbol is used for comments in Python?",
+        "options": ["A. //", "B. /*", "C. #", "D. <!--"],
+        "answer": "C"
+    },
+    {
+        "question": "3. Which function is used to display output?",
+        "options": ["A. display()", "B. print()", "C. show()", "D. output()"],
+        "answer": "B"
+    },
+    {
+        "question": "4. Which data type stores True or False?",
+        "options": ["A. String", "B. Integer", "C. Boolean", "D. Float"],
+        "answer": "C"
+    },
+    {
+        "question": "5. Which keyword is used to create a function?",
+        "options": ["A. function", "B. define", "C. fun", "D. def"],
+        "answer": "D"
+    }
+]
 
-length = int(input("Enter password length: "))
+score = 0
 
-if length < 4:
-    print("❌ Password length should be at least 4.")
+for q in questions:
+    print("\n" + q["question"])
+
+    for option in q["options"]:
+        print(option)
+
+    answer = input("Enter your answer (A/B/C/D): ").upper()
+
+    if answer == q["answer"]:
+        print("✅ Correct!")
+        score += 1
+    else:
+        print("❌ Wrong!")
+        print("Correct answer:", q["answer"])
+
+print("\n===================================")
+print("              RESULT")
+print("===================================")
+
+print("Your Score:", score, "/", len(questions))
+
+percentage = (score / len(questions)) * 100
+print("Percentage:", percentage, "%")
+
+if percentage == 100:
+    print("🏆 Excellent!")
+elif percentage >= 60:
+    print("👏 Good job!")
 else:
-    characters = (
-        string.ascii_letters +
-        string.digits +
-        string.punctuation
-    )
+    print("📚 Keep practicing!")
 
-    password = ""
-
-    for i in range(length):
-        password += random.choice(characters)
-
-    print("\n🔑 Your generated password is:")
-    print(password)
-
-    print("\n✅ Password generated successfully!")
+print("===================================")
