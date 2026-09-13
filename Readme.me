@@ -1,29 +1,27 @@
 import random
+import string
 
-print("===================================")
-print("       🔢 NUMBER GUESSING GAME")
-print("===================================")
+print("====================================")
+print("       🔐 PASSWORD GENERATOR")
+print("====================================")
 
-secret_number = random.randint(1, 100)
-attempts = 0
+length = int(input("Enter password length: "))
 
-print("I have selected a number between 1 and 100.")
-print("Try to guess it! 🎯")
+if length < 4:
+    print("❌ Password length should be at least 4.")
+else:
+    characters = (
+        string.ascii_letters +
+        string.digits +
+        string.punctuation
+    )
 
-while True:
-    guess = int(input("\nEnter your guess: "))
-    attempts += 1
+    password = ""
 
-    if guess < secret_number:
-        print("📈 Too low! Try a bigger number.")
+    for i in range(length):
+        password += random.choice(characters)
 
-    elif guess > secret_number:
-        print("📉 Too high! Try a smaller number.")
+    print("\n🔑 Your generated password is:")
+    print(password)
 
-    else:
-        print("\n🎉 Congratulations!")
-        print("You guessed the correct number!")
-        print("Number of attempts:", attempts)
-        break
-
-print("\nThanks for playing! 😊")
+    print("\n✅ Password generated successfully!")
