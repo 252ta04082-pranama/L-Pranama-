@@ -1,44 +1,29 @@
-print("====================================")
-print("       🎓 STUDENT GRADE CALCULATOR")
-print("====================================")
+import random
 
-name = input("Enter student name: ")
+print("===================================")
+print("       🔢 NUMBER GUESSING GAME")
+print("===================================")
 
-print("\nEnter marks out of 100:")
+secret_number = random.randint(1, 100)
+attempts = 0
 
-maths = float(input("Maths: "))
-physics = float(input("Physics: "))
-chemistry = float(input("Chemistry: "))
-english = float(input("English: "))
-computer = float(input("Computer Science: "))
+print("I have selected a number between 1 and 100.")
+print("Try to guess it! 🎯")
 
-total = maths + physics + chemistry + english + computer
-percentage = total / 5
+while True:
+    guess = int(input("\nEnter your guess: "))
+    attempts += 1
 
-if percentage >= 90:
-    grade = "A+"
-elif percentage >= 80:
-    grade = "A"
-elif percentage >= 70:
-    grade = "B"
-elif percentage >= 60:
-    grade = "C"
-elif percentage >= 50:
-    grade = "D"
-else:
-    grade = "F"
+    if guess < secret_number:
+        print("📈 Too low! Try a bigger number.")
 
-print("\n====================================")
-print("             RESULT")
-print("====================================")
-print("Student Name :", name)
-print("Total Marks  :", total, "/ 500")
-print("Percentage   :", percentage, "%")
-print("Grade        :", grade)
+    elif guess > secret_number:
+        print("📉 Too high! Try a smaller number.")
 
-if percentage >= 50:
-    print("Status       : PASS ✅")
-else:
-    print("Status       : FAIL ❌")
+    else:
+        print("\n🎉 Congratulations!")
+        print("You guessed the correct number!")
+        print("Number of attempts:", attempts)
+        break
 
-print("====================================")
+print("\nThanks for playing! 😊")
